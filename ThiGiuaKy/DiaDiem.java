@@ -28,6 +28,10 @@ public class DiaDiem {
         return thanhPho_tinh;
     }
 
+    public String getQuan_huyen() {
+        return quan_huyen;
+    }
+
     public static void main(String[] args) {
         String id = "81000";
         String name = "Long An";

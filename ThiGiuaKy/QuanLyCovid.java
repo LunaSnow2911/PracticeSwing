@@ -2,13 +2,9 @@ package ThiGiuaKy;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Map;
-import java.util.Set;
-import java.util.SortedSet;
 import java.util.TreeMap;
-import java.util.TreeSet;
 import java.util.Comparator;
 import java.util.Map.Entry;
 
@@ -26,11 +22,12 @@ public class QuanLyCovid {
             int tempSoMui = tempCongDan.getSoMuiTiem();
 
             String tempTinh_tp = tempCongDan.getDiaChiTT().getThanhPho_tinh();
+            String tempQh = tempCongDan.getDiaChiTT().getQuan_huyen();
             if (tempTinh_tp.equals(tinh_tp) && tempSoMui == soMui) {
-                if (result.containsKey(tempTinh_tp)) {
-                    result.put(tempTinh_tp, result.get(tempTinh_tp) + 1);
+                if (result.containsKey(tempQh)) {
+                    result.put(tempQh, result.get(tempQh) + 1);
                 } else {
-                    result.put(tempTinh_tp, 1);
+                    result.put(tempQh, 1);
                 }
             }
         }
@@ -187,13 +184,17 @@ public class QuanLyCovid {
         String name4 = "An Giang";
 
         String tp = name;
-        String qh = "CanDuoc";
+        String qh = "Can Duoc";
+        String qh2 = "Can Giuoc";
+        String qh3 = "Ben Luc";
         String tp2 = name2;
         String tp3 = name3;
         String tp4 = name4;
         String px = "LHĐ";
         String address = "xa LHD, huyen Can Duoc, tinh Long An";
         DiaDiem diaChiTT1 = new DiaDiem(id, name, tp, qh, px, address);
+        DiaDiem diaChiTT1a = new DiaDiem(id, name, tp, qh2, px, address);
+        DiaDiem diaChiTT1b = new DiaDiem(id, name, tp, qh3, px, address);
         DiaDiem diaChiTT2 = new DiaDiem(id, name2, tp2, qh, px, address);
         DiaDiem diaChiTT3 = new DiaDiem(id, name3, tp3, qh, px, address);
         DiaDiem diaChiTT4 = new DiaDiem(id, name4, tp4, qh, px, address);
@@ -238,6 +239,8 @@ public class QuanLyCovid {
 
         String maCD = "20130068";
         String hoTen = "DAO LUU TRONG LUAN";
+        String hoTen1a = "DAO LUU TRONG LUANa";
+        String hoTen1b = "DAO LUU TRONG LUANb";
         String hoTen2 = "NGUYEN VAN A";
         String hotenString = "NGUYEN VAN B";
         String hotenString2 = "NGUYEN VAN C";
@@ -250,6 +253,11 @@ public class QuanLyCovid {
         String queQuan4 = "An Giang";
 
         CongDan congdan1 = new CongDan(maCD, hoTen, CCCD, maBHYT, namSinh, queQuan, diaChiTT1, dsTiem, dsLanNhiemCovid);
+        CongDan congdan1a = new CongDan(maCD, hoTen1a, CCCD, maBHYT, namSinh, queQuan, diaChiTT1a, dsTiem,
+                dsLanNhiemCovid);
+        CongDan congdan1b = new CongDan(maCD, hoTen1b, CCCD, maBHYT, namSinh, queQuan, diaChiTT1b, dsTiem,
+                dsLanNhiemCovid);
+
         CongDan congdan2 = new CongDan(maCD, hoTen2, CCCD, maBHYT, namSinh, queQuan2, diaChiTT2, dsTiem,
                 dsLanNhiemCovid2);
         CongDan congdan3 = new CongDan(maCD, hotenString, CCCD, maBHYT, namSinh, queQuan3, diaChiTT3, dsTiem,
@@ -261,6 +269,8 @@ public class QuanLyCovid {
 
         ArrayList<CongDan> listCongDan = new ArrayList<>();
         listCongDan.add(congdan1);
+        listCongDan.add(congdan1a);
+        listCongDan.add(congdan1b);
         listCongDan.add(congdan2);
         listCongDan.add(congdan3);
         listCongDan.add(congdan4);
